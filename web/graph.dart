@@ -10,17 +10,20 @@ final CanvasRenderingContext2D context = canvas.context2D;
 final List<Node> nodes = new List<Node>();
 
 void main() {
-  nodes.add(new Node(20, 20, 20, 20));
+  nodes.add(new Node(200, 200, 40));
+  nodes.add(new Node(100, 150, 40));
   for(Node n in nodes){
     _drawNode(n);
   }
 }
 
 void _drawNode(Node n) {
-  context..lineWidth = n.lineWidth
+  context..beginPath()
+         ..lineWidth = n.lineWidth 
          ..fillStyle = n.fillStyle
-         ..fillRect(n.boundBox.left, n.boundBox.top, n.boundBox.width, n.boundBox.height)
+         ..arc(n.x, n.y, n.radius, 0, 2 * Math.PI, false)
+         ..fill()
          ..strokeStyle = n.strokeColor
-         ..strokeRect(n.boundBox.left, n.boundBox.top, n.boundBox.width, n.boundBox.height);  
+         ..stroke();  
 }
 
