@@ -7,8 +7,9 @@ class Node {
   int lineWidth = 4;
   int x;
   int y;
-  int radius;
+  int a;
+  int b;
 
-  Node(this.x, this.y, this.radius);
+  Node(this.x, this.y, this.a, this.b);
   
 }
