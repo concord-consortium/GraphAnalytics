@@ -1,0 +1,192 @@
+B5b_Graph1    
+N Cause 2
+Cause A N
+Cause D 2
+A E 2
+D E 2
+E B 0
+E F 0
+B C 1
+C Effect  2
+F Effect  2
+B5b_Graph2    
+N Cause 2
+Cause D 2
+D E 2
+E C 2
+C Effect  1
+B5b_Graph3    
+B5b_Graph4    
+N Cause 2
+Cause A N
+A C N
+C E N
+E F N
+F Effect  2
+B8a_Graph1    
+N Cause 2
+Cause B 2
+B E 2
+E C 2
+C Effect  2
+B8a_Graph2    
+N Cause 2
+Cause C 2
+C E 2
+E B 2
+B Effect  2
+B8a_Graph3    
+B8a_Graph4    
+B10a_Graph1   
+N Cause 2
+Cause A 2
+Cause B 2
+A E 2
+A F 2
+A C 2
+E C 2
+E Effect  2
+B10a_Graph2   
+B10a_Graph3   
+B10a_Graph4   
+B2a_Graph1    
+N Cause 2
+Cause C 2
+C B 2
+B F 2
+F E N
+E A 1
+A D 1
+D Effect  1
+B2a_Graph2    
+B2a_Graph3    
+B2a_Graph4    
+B6a_Graph1    
+N Cause 2
+Cause B 1
+Cause E 2
+Cause F 0
+B E 2
+E Effect  2
+F Effect  2
+B6a_Graph2    
+N Cause 2
+Cause Effect  1
+B6a_Graph3    
+N Cause 2
+Cause B 0
+Cause E 0
+Cause F 0
+B Effect  0
+E Effect  0
+F Effect  0
+B6a_Graph4    
+B12b_Graph1   
+N Cause 2
+Cause B N
+Cause E 2
+B Effect  2
+E Effect  2
+B12b_Graph2   
+N Cause 2
+Cause C 2
+Cause E 2
+Cause F 2
+C E 2
+C F 2
+F Effect  2
+B12b_Graph3   
+N Cause 2
+Cause B 0
+Cause E 0
+Cause F 0
+B Effect  0
+E Effect  0
+F Effect  0
+B12b_Graph4   
+N Cause 2
+Cause A 2
+Cause C 2
+Cause B 2
+Cause E 2
+Cause F 2
+A Effect  1
+B Effect  1
+E Effect  1
+F Effect  1
+B4a_Graph1    
+B4a_Graph2    
+B4a_Graph3    
+B4a_Graph4    
+B4b_Graph1    
+N Cause 2
+Cause A 2
+Cause C 1
+Cause E 2
+Cause Effect  2
+B4b_Graph2    
+N Cause 2
+Cause Effect  2
+B4b_Graph3    
+N Cause 2
+Cause G 1
+G Effect  0
+B4b_Graph4    
+B10b_Graph1   
+N Cause 2
+Cause A 2
+Cause B 2
+Cause C 2
+A C 2
+A E 2
+A F 2
+A B 2
+C F 2
+C E 2
+E Effect  2
+B10b_Graph2   
+N Cause 2
+Cause B 2
+Cause A 2
+Cause C 2
+A B 2
+A C 2
+A E 2
+A F 2
+B E 2
+B F 2
+E Effect  1
+B10b_Graph3   
+N Cause 2
+Cause A 0
+Cause B 0
+A B 0
+A C 0
+A Effect  0
+C E 0
+C Effect  0
+B E 0
+B10b_Graph4   
+B7b_Graph1    
+N Cause 2
+Cause A N
+A B N
+B C N
+C Effect  N
+Cause D N
+D E N
+E F N
+F Effect  N
+B7b_Graph2    
+N Cause 2
+Cause Effect  2
+B7b_Graph3    
+B7b_Graph4    
+B7a_Graph1    
+N Cause 2
+Cause B 2
+Cause D 2
+Cause Effect  2
+B Effect  2
+D F 0
+B7a_Graph2    
