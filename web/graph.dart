@@ -21,6 +21,16 @@ void main() {
 
   String url = "http://127.0.0.1:3030/GraphAnalytics/web/causality.txt";
   var request = HttpRequest.getString(url).then(_onDataLoaded);
+
+  nodes.add(new Node("Cause",canvas.width~/2, 100));
+  nodes.add(new Node("A",canvas.width~/2-200, 200));
+  nodes.add(new Node("B",canvas.width~/2-200, 300));
+  nodes.add(new Node("C",canvas.width~/2-200, 400));
+  nodes.add(new Node("D",canvas.width~/2+200, 200));
+  nodes.add(new Node("E",canvas.width~/2+200, 300));
+  nodes.add(new Node("F",canvas.width~/2+200, 400));
+  nodes.add(new Node("G",canvas.width~/2, 300));
+  nodes.add(new Node("Effect",canvas.width~/2, 500));
   
 }
 
@@ -42,28 +52,23 @@ void _onDataLoaded(String responseText) {
       data.add(s.trim());
     }
   }
-  _draw("B5b_Graph1");
+  _drawNodes();
+  _draw("B5b_Graph4");
+}
+
+void _drawNodes() {
+  for(Node n in nodes) {
+    if(n.name.length > 1) 
+      _drawEndPoint(n);
+    else 
+      _drawNode(n);
+  }
 }
 
 void _draw(String key) {
   
   List<String> data = maps[key];
   
-  List<String> nodeNames = new List<String>();
-
-  for(String s in data) {
-    List<String> list = s.split(' ');
-    for(int i = 0; i < 2; i++) {
-      String t = list[i].trim();
-      if(t == "N") continue;
-      if(!nodeNames.contains(t)) nodeNames.add(t);
-    }
-  }
-  //print("$key - $nodeNames");
-  for(String name in nodeNames) {
-    nodes.add(new Node(name));
-  }
-
   for(String s in data) {
     List<String> list = s.split(' ');
     if(list[0].trim() == "N") continue;
@@ -74,27 +79,8 @@ void _draw(String key) {
     edges.add(new Edge(a, b));
   }
 
-  int x = 200;
-  int y = 20;
-  int i = 0;
-  for(Node n in nodes) {
-    y += 40;
-    if(i % 2 == 0){
-      x = 200;
-    } else {
-      x = 400;
-    }
-    n.set(x, y, radius, radius);
-    i++;
-  }
-  
-  for(Edge e in edges) {
+  for(Edge e in edges)
     _drawEdge(e);
-  }
-
-  for(Node n in nodes) {
-    _drawNode(n);
-  }
 
 }
 
@@ -108,17 +94,31 @@ Node getNode(String name) {
 void _drawNode(Node n) {
   context.font = "12px Arial";
   context..beginPath()
-         ..lineWidth = n.lineWidth 
-         ..fillStyle = n.fillStyle
-         ..ellipse(n.x, n.y, n.a, n.b, 0, 0, 2 * Math.PI, false)
+         ..lineWidth = 2 
+         ..fillStyle = "red"
+         ..arc(n.x, n.y, radius, 0, 2 * Math.PI)
          ..fill()
-         ..strokeStyle = n.strokeColor
-         ..stroke();
-  double textWidth = context.measureText(n.name).width;
-  context..lineWidth = 1 
-         ..fillStyle = "rgba(0, 0, 0, 1)"
-         ..fillText(n.name, n.x - textWidth / 2, n.y + 6)
+         ..strokeStyle = "black"
+         ..stroke()
          ..closePath();
+  double textWidth = context.measureText(n.name).width;
+  context..fillStyle = "white"
+         ..fillText(n.name, n.x - textWidth / 2, n.y + 6);
+}
+
+void _drawEndPoint(Node n) {
+  context.font = "12px Arial";
+  context..beginPath()
+         ..lineWidth = 2 
+         ..fillStyle = "yellow"
+         ..arc(n.x, n.y, radius, 0, 2 * Math.PI)
+         ..fill()
+         ..strokeStyle = "black"
+         ..stroke()
+         ..closePath();
+  double textWidth = context.measureText(n.name).width;
+  context..fillStyle = "black"
+         ..fillText(n.name, n.x - textWidth / 2, n.y + 6);
 }
 
 void _drawEdge(Edge e) {
@@ -148,5 +148,3 @@ void _drawLine(num x1, num y1, num x2, num y2) {
          ..stroke()
          ..closePath();  
 }
-
-

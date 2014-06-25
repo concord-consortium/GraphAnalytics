@@ -3,22 +3,14 @@ part of graph;
 class Node {
 
   String name;
-  int x;
-  int y;
-  int a;
-  int b;
+  int x = 0;
+  int y = 0;
 
-  Node(this.name);
+  Node(this.name, this.x, this.y);
   
-  void set(int x, int y, int a, int b) {
+  void set(int x, int y) {
     this.x = x;
     this.y = y;
-    this.a = a;
-    this.b = b;
   }
-  
-  String fillStyle = "rgba(255, 0, 0, 0.5)";
-  String strokeColor = "black";
-  int lineWidth = 4;
 
 }
