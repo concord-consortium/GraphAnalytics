@@ -99,9 +99,9 @@ void _onDataLoaded(String responseText) {
     }
   }
   
-  new Graph(canvas1, "Graph1", "D").draw();
-  new Graph(canvas2, "Graph2", "D").draw();
-  new Graph(canvas3, "Graph3", "D").draw();
-  new Graph(canvas4, "Graph4", "D").draw();
+  new Graph(canvas1, "Graph1", "E").draw();
+  new Graph(canvas2, "Graph2", "E").draw();
+  new Graph(canvas3, "Graph3", "E").draw();
+  new Graph(canvas4, "Graph4", "E").draw();
   
 }

@@ -53,6 +53,7 @@ class Graph {
   void _createEdges(String key) {
     List<String> data = maps[key];
     for(String s in data) {
+      if(s=="") continue;
       List<String> list = s.split(' ');
       if(list[0].trim() == "N") continue;
       if(list[1].trim() == "N") continue;

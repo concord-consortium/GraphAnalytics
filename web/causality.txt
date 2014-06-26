@@ -190,8 +190,6 @@ Cause Effect  2
 B Effect  2                                             
 D F 0                                             
 B7a_Graph2                                                  
-                                                  
-                                                  
 B9b_Graph1                                                  
 N Cause 2                                             
 Cause B 2                                             
@@ -388,8 +386,7 @@ Cause C 2
 Cause B 2                                             
 Cause Effect  2                                             
 Cause F 2                                             
-Cause E 2                                             
-                                                  
+Cause E 2                                         
 E2b_Graph1                                                  
 E2b_Graph2                                                  
 E2b_Graph3                                                  
@@ -470,7 +467,7 @@ Cause C 0
 Cause E 2                                             
 B E 2                                             
 C F 2                                             
-Effect  C 0                                             
+Effect C 0                                             
 E4a_Graph2                                                  
 N Cause 2                                             
 Cause B 2                                             
