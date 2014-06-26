@@ -4,8 +4,8 @@ class Edge {
 
   Node a;
   Node b;
-  int action;
+  var action;
 
-  Edge(this.a, this.b);
+  Edge(this.a, this.b, this.action);
   
 }

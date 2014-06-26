@@ -1,192 +1,1204 @@
-B5b_Graph1    
-N Cause 2
-Cause A N
-Cause D 2
-A E 2
-D E 2
-E B 0
-E F 0
-B C 1
-C Effect  2
-F Effect  2
-B5b_Graph2    
-N Cause 2
-Cause D 2
-D E 2
-E C 2
-C Effect  1
-B5b_Graph3    
-B5b_Graph4    
-N Cause 2
-Cause A N
-A C N
-C E N
-E F N
-F Effect  2
-B8a_Graph1    
-N Cause 2
-Cause B 2
-B E 2
-E C 2
-C Effect  2
-B8a_Graph2    
-N Cause 2
-Cause C 2
-C E 2
-E B 2
-B Effect  2
-B8a_Graph3    
-B8a_Graph4    
-B10a_Graph1   
-N Cause 2
-Cause A 2
-Cause B 2
-A E 2
-A F 2
-A C 2
-E C 2
-E Effect  2
-B10a_Graph2   
-B10a_Graph3   
-B10a_Graph4   
-B2a_Graph1    
-N Cause 2
-Cause C 2
-C B 2
-B F 2
-F E N
-E A 1
-A D 1
-D Effect  1
-B2a_Graph2    
-B2a_Graph3    
-B2a_Graph4    
-B6a_Graph1    
-N Cause 2
-Cause B 1
-Cause E 2
+B5b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause D 2                                             
+A E 2                                             
+D E 2                                             
+E B 0                                             
+E F 0                                             
+B C 1                                             
+C Effect  2                                             
+F Effect  2                                             
+B5b_Graph2                                                  
+N Cause 2                                             
+Cause D 2                                             
+D E 2                                             
+E C 2                                             
+C Effect  1                                             
+B5b_Graph3                                                  
+B5b_Graph4                                                  
+N Cause 2                                             
+Cause A N                                             
+A C N                                             
+C E N                                             
+E F N                                             
+F Effect  2                                             
+B8a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E C 2                                             
+C Effect  2                                             
+B8a_Graph2                                                  
+N Cause 2                                             
+Cause C 2                                             
+C E 2                                             
+E B 2                                             
+B Effect  2                                             
+B8a_Graph3                                                  
+B8a_Graph4                                                  
+B10a_Graph1                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+A E 2                                             
+A F 2                                             
+A C 2                                             
+E C 2                                             
+E Effect  2                                             
+B10a_Graph2                                                 
+B10a_Graph3                                                 
+B10a_Graph4                                                 
+B2a_Graph1                                                  
+N Cause 2                                             
+Cause C 2                                             
+C B 2                                             
+B F 2                                             
+F E N                                             
+E A 1                                             
+A D 1                                             
+D Effect  1                                             
+B2a_Graph2                                                  
+B2a_Graph3                                                  
+B2a_Graph4                                                  
+B6a_Graph1                                                  
+N Cause 2                                             
+Cause B 1                                             
+Cause E 2                                             
+Cause F 0                                             
+B E 2                                             
+E Effect  2                                             
+F Effect  2                                             
+B6a_Graph2                                                  
+N Cause 2                                             
+Cause Effect  1                                             
+B6a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+Cause F 0                                             
+B Effect  0                                             
+E Effect  0                                             
+F Effect  0                                             
+B6a_Graph4                                                  
+B12b_Graph1                                                 
+N Cause 2                                             
+Cause B N                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+B12b_Graph2                                                 
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+Cause F 2                                             
+C E 2                                             
+C F 2                                             
+F Effect  2                                             
+B12b_Graph3                                                 
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+Cause F 0                                             
+B Effect  0                                             
+E Effect  0                                             
+F Effect  0                                             
+B12b_Graph4                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause F 2                                             
+A Effect  1                                             
+B Effect  1                                             
+E Effect  1                                             
+F Effect  1                                             
+B4a_Graph1                                                  
+B4a_Graph2                                                  
+B4a_Graph3                                                  
+B4a_Graph4                                                  
+B4b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 1                                             
+Cause E 2                                             
+Cause Effect  2                                             
+B4b_Graph2                                                  
+N Cause 2                                             
+Cause Effect  2                                             
+B4b_Graph3                                                  
+N Cause 2                                             
+Cause G 1                                             
+G Effect  0                                             
+B4b_Graph4                                                  
+B10b_Graph1                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 2                                             
+A C 2                                             
+A E 2                                             
+A F 2                                             
+A B 2                                             
+C F 2                                             
+C E 2                                             
+E Effect  2                                             
+B10b_Graph2                                                 
+N Cause 2                                             
+Cause B 2                                             
+Cause A 2                                             
+Cause C 2                                             
+A B 2                                             
+A C 2                                             
+A E 2                                             
+A F 2                                             
+B E 2                                             
+B F 2                                             
+E Effect  1                                             
+B10b_Graph3                                                 
+N Cause 2                                             
+Cause A 0                                             
+Cause B 0                                             
+A B 0                                             
+A C 0                                             
+A Effect  0                                             
+C E 0                                             
+C Effect  0                                             
+B E 0                                             
+B10b_Graph4                                                 
+B7b_Graph1                                                  
+N Cause 2                                             
+Cause A N                                             
+A B N                                             
+B C N                                             
+C Effect  N                                             
+Cause D N                                             
+D E N                                             
+E F N                                             
+F Effect  N                                             
+B7b_Graph2                                                  
+N Cause 2                                             
+Cause Effect  2                                             
+B7b_Graph3                                                  
+B7b_Graph4                                                  
+B7a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause D 2                                             
+Cause Effect  2                                             
+B Effect  2                                             
+D F 0                                             
+B7a_Graph2                                                  
+                                                  
+                                                  
+B9b_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause D 2                                             
+B E 2                                             
+D E 2                                             
+E Effect  2                                             
+B9b_Graph2                                                  
+N Cause 2                                             
+Cause E 2                                             
+E B 2                                             
+B Effect  1                                             
+B9b_Graph3                                                  
+N Cause 2                                             
+Cause E 0                                             
+E Effect  0                                             
+B9b_Graph4                                                  
+B9c_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+B9c_Graph2                                                  
+N Cause 2                                             
+Cause E 2                                             
+E B 2                                             
+E Effect  1                                             
+B Effect  1                                             
+B9c_Graph3                                                  
+N Cause 2                                             
+Cause E 0                                             
+E Effect  0                                             
+B9c_Graph4                                                  
+B9a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+B9a_Graph2                                                  
+N Cause 2                                             
+Cause G 2                                             
+G B 2                                             
+B Effect  0                                             
+B9a_Graph3                                                  
+N Cause 2                                             
+Cause E 0                                             
+E Effect  0                                             
+B9a_Graph4                                                  
+B3a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+A E 2                                             
+E Effect  2                                             
+B3a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+A E 2                                             
+E F 0                                             
+F Effect  2                                             
+B3a_Graph3                                                  
+N Cause 2                                             
+Cause D 2                                             
+D B 0                                             
+B Effect  0                                             
+B3a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B E 2                                             
+E F 2                                             
+F Effect  2                                             
+B3b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+A E 2                                             
+E Effect  2                                             
+B3b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+A E 2                                             
+E F 0                                             
+F Effect  2                                             
+B3b_Graph3                                                  
+N Cause 2                                             
+Cause D 2                                             
+D B 0                                             
+B Effect  0                                             
+B3b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+E F 2                                             
+F Effect  2                                             
+B12a_Graph1                                                 
+N Cause 2                                             
+Cause B N                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+B12a_Graph2                                                 
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+Cause F 2                                             
+C E 2                                             
+C F 2                                             
+F Effect  2                                             
+B12a_Graph3                                                 
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+Cause F 0                                             
+B Effect  0                                             
+E Effect  0                                             
+F Effect  0                                             
+B12a_Graph4(messy)                                                  
+B1b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 1                                             
+Cause Effect  N                                             
+Cause F 0                                             
+Cause E 0                                             
+Cause D 1                                             
+A B 2                                             
+B E 0                                             
+B1b_Graph2                                                  
+B1b_Graph3                                                  
+N Cause 2                                             
+Cause A 1                                             
+Cause C 0                                             
+Cause G 0                                             
+Cause D 0                                             
+G B 2                                             
+G E 1                                             
+G F 2                                             
+G Effect  0                                             
+E F 2                                             
+F E 1                                             
+B1b_Graph4                                                  
+N Cause 2                                             
+Cause A 1                                             
+Cause C 2                                             
+Cause G 2                                             
+Cause E 2                                             
+Cause D 1                                             
+G B 2                                             
+G F 1                                             
+G Effect  2                                             
+B Effect  2                                             
+B1a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 1                                             
+Cause Effect  2                                             
+Cause F 0                                             
+Cause E 0                                             
+Cause D 1                                             
+A B 2                                             
+B E 0                                             
+E F 0                                             
+B1a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 0                                             
+Cause B 0                                             
+Cause E 0                                             
+Cause D 1                                             
+Cause F 0                                             
+Cause Effect  1                                             
+C E 0                                             
+B E 0                                             
+B1a_Graph3                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 0                                             
+Cause B 0                                             
+Cause G 2                                             
+Cause Effect  2                                             
+C B 0                                             
+B E 0                                             
+B F 0                                             
+F E 0                                             
+B1a_Graph4                                                  
+N Cause 2                                             
+Cause A N                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+Cause F 2                                             
+Cause E 2                                             
+                                                  
+E2b_Graph1                                                  
+E2b_Graph2                                                  
+E2b_Graph3                                                  
+E2b_Graph4                                                  
+E2a_Graph1                                                  
+E2a_Graph2                                                  
+E2a_Graph3                                                  
+E2a_Graph4                                                  
+E5b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A B 2                                             
+A Effect  2                                             
+A C 2                                             
+B E 2                                             
+B Effect  2                                             
+C Effect  2                                             
+E Effect  2                                             
+E5b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause E 2                                             
+A C 2                                             
+A E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+E5b_Graph3                                                  
+N Cause 2                                             
+Cause A 0                                             
+A C 0                                             
+C B 0                                             
+C E 0                                             
+B Effect  0                                             
+E Effect  0                                             
+E5b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+E7b_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 0                                             
+Cause F 2                                             
+B C 0                                             
+B F 2                                             
+B Effect  2                                             
+E7b_Graph2                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+E F 2                                             
+B F 2                                             
+B Effect  2                                             
+E7b_Graph3                                                  
+N Cause 2                                             
+Cause C 0                                             
+C E 0                                             
+E B 0                                             
+C B 0                                             
+B Effect  0                                             
+E7b_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+C E 2                                             
+C B 2                                             
+E F 2                                             
+E4a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 0                                             
+Cause E 2                                             
+B E 2                                             
+C F 2                                             
+Effect  C 0                                             
+E4a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+E4a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 0                                             
+E4a_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause B 2                                             
+C B 2                                             
+C A 2                                             
+B E 2                                             
+E4b_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 0                                             
+B E 2                                             
+C F 2                                             
+E4b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+E4b_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 0                                             
+E4b_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+E6a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 0                                             
+Cause F 0                                             
+B Effect  2                                             
+E F 0                                             
+E6a_Graph2                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause E 2                                             
+C B 2                                             
+E F 2                                             
+E6a_Graph3                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+E Effect  0                                             
+E6a_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+C B 2                                             
+B E 2                                             
+E Effect  2                                             
+E7a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 0                                             
+Cause F 2                                             
+B C 0                                             
+B F 2                                             
+B Effect  2                                             
+F Effect  2                                             
+E7a_Graph2                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause E 2                                             
+E F 2                                             
+C Effect  2                                             
+E7a_Graph3                                                  
+N Cause 2                                             
+Cause C 0                                             
+C B 0                                             
+C E 0                                             
+E B 0                                             
+B Effect  0                                             
+E7a_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+C E 2                                             
+C B 2                                             
+B E 2                                             
+E F 2                                             
+F Effect  2                                             
+E8a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause F 2                                             
+Cause Effect  2                                             
+B Effect  2                                             
+E Effect  2                                             
+E8a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+B Effect  2                                             
+E Effect  2                                             
+E8a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 1                                             
+E Effect  0                                             
+E8a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause Effect  2                                             
+A C 2                                             
+C B 2                                             
+C E 2                                             
+C Effect  2                                             
+E8b_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause F 2                                             
+B Effect  2                                             
+E Effect  2                                             
+F Effect  2                                             
+E8b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+B Effect  2                                             
+E Effect  2                                             
+E8b_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 0                                             
+E Effect  0                                             
+E8b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause Effect  2                                             
+A C 2                                             
+C B 2                                             
+C Effect  2                                             
+C E 2                                             
+E3b_Graph1(The best one is here)                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+E3b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+E3b_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 0                                             
+E Effect  0                                             
+E3b_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+C B 2                                             
+C E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+E6b_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 0                                             
+Cause F 0                                             
+E F 0                                             
+B Effect  2                                             
+E6b_Graph2                                                  
+N Cause 2                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause E 2                                             
+C B 2                                             
+E F 2                                             
+E6b_Graph3                                                  
+N Cause 2                                             
+Cause B                                               
+Cause E                                               
+B E                                               
+E Effect  0                                             
+E6b_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+C B 2                                             
+C E 2                                             
+C F 2                                             
+E F 2                                             
+F Effect  2                                             
+E3a_Graph1                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 1                                             
+B Effect  2                                             
+E Effect  2                                             
+E3a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+E Effect  N                                             
+E3a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+B E 0                                             
+E Effect  0                                             
+E3a_Graph4                                                  
+N Cause 2                                             
+Cause C 2                                             
+C E 2                                             
+E Effect  2                                             
+D6a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+A B 2                                             
+D6a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause F 2                                             
+A B 2                                             
+D6a_Graph3                                                  
+N Cause 2                                             
+Cause C 0                                             
+Cause F 0                                             
+C B 0                                             
+F Effect  0                                             
+D6a_Graph4                                                  
+N Cause 2                                             
+Cause C 0                                             
+Cause E 0                                             
+C F 0                                             
+D6b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+A B 2                                             
+D6b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause F 2                                             
+A B 2                                             
+D6b_Graph3                                                  
+N Cause 2                                             
+Cause C 0                                             
+Cause E 0                                             
+C F 0                                             
+D6b_Graph4                                                  
+N Cause 2                                             
+Cause C 1                                             
+Cause F 0                                             
+C B 0                                             
+F Effect  0                                             
+D6c_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+D6c_Graph2                                                  
+D6c_Graph3                                                  
+D6c_Graph4                                                  
+D7a_Graph1
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D7a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D7a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+B Effect  0                                             
+E Effect  0                                             
+D7a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C Effect  2                                             
+D7b_Graph1
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D7b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D7b_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+B Effect  0                                             
+E Effect  0                                             
+D7b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C Effect  2                                             
+D3a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+B E 2                                             
+E F 2                                             
+D3a_Graph2                                                  
+N Cause 2                                             
+Cause B N                                             
+Cause Effect  N                                             
+B E N                                             
+E F N                                             
+F Effect  N                                             
+D3a_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+E Effect  0                                             
+D3a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B F 2                                             
+D3b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+B E 2                                             
+E F 2                                             
+F Effect  2                                             
+D3b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+B E 2                                             
+E F 1                                             
+F Effect  2                                             
+D3b_Graph3                                                  
+N Cause 2                                             
+Cause B 0                                             
+Cause E 0                                             
+E Effect  0                                             
+B Effect  0                                             
+D3b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+E F 2                                             
+F B 2                                             
+F Effect  1                                             
+D5a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+B E 0                                             
+E F 0                                             
+D5a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+B E 2                                             
+E F 2                                             
+F Effect  2                                             
+D5a_Graph3                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause Effect  0                                             
+A C 2                                             
+A Effect  0                                             
+C B 2                                             
+C Effect  0                                             
+B F 2                                             
+B Effect  0                                             
+F E 2                                             
+F Effect  0                                             
+E Effect  0                                             
+D5a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B F 2                                             
+F Effect  N                                             
+D5b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause Effect  2                                             
+B E N                                             
+E F N                                             
+D5b_Graph2                                                  
+N Cause 2                                             
+Cause B N                                             
+Cause Effect  N                                             
+B E N                                             
+E F N                                             
+F Effect  2                                             
+D5b_Graph3                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause Effect  N                                             
+A Effect  N                                             
+D5b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B N                                             
+B F 2                                             
+F Effect  N                                             
+D4a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 2                                             
+C Effect  N                                             
+D4a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+D4a_Graph3                                                  
+N Cause 2                                             
+Cause A 0                                             
+Cause C 0                                             
+Cause E 0                                             
+C B 0                                             
+B E 0                                             
+B Effect  N                                             
+E Effect  N                                             
+D4a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B E 2                                             
+B Effect  2                                             
+D4b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 2                                             
+C Effect  2                                             
+D4b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+D4b_Graph3                                                  
+N Cause 2                                             
+Cause A 0                                             
+Cause C 0                                             
+Cause E 0                                             
+C B 0                                             
+B E 0                                             
+B Effect  N                                             
+D4b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B D 1                                             
+B Effect  2                                             
+D1a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 2                                             
+C Effect  2                                             
+D1a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D1a_Graph3                                                  
+N Cause 2                                             
+Cause A 0                                             
+Cause E 0                                             
+A C 0                                             
+C B 0                                             
+B E 0                                             
+E Effect  0                                             
+B Effect  0                                             
+D1a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause B 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D1b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause C 2                                             
+Cause E 2                                             
+A B 2                                             
+B C 2                                             
+C Effect  2                                             
+D1b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause E 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+E Effect  2                                             
+D1b_Graph3                                                  
+N Cause 2                                             
+Cause A 0                                             
+Cause E 0                                             
+Cause C 0                                             
+A C 0                                             
+C B 0                                             
+B E 0                                             
+E Effect  0                                             
+B Effect  0                                             
+D1b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B Effect  2                                             
+C E 2                                             
+B E 2                                             
+D8a_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause E 2                                             
+A B 2                                             
+D8a_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause C 2                                             
+Cause E 2                                             
+A C 2                                             
+D8a_Graph3                                                  
+N Cause 2                                             
+Cause E 2                                             
+E Effect  2                                             
+D8a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause Effect  N                                             
+D8b_Graph1                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause B 2                                             
+Cause E 2                                             
+A B 2                                             
+D8b_Graph2                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A C 2                                             
+A B 2                                             
+D8b_Graph3                                                  
+N Cause 2                                             
+Cause E 2                                             
+E Effect  2                                             
+D8b_Graph4                                                  
+N Cause 2                                             
+Cause A N                                             
+Cause Effect  N                                             
+D9a_Graph1                                                  
+D9a_Graph2                                                  
+D9a_Graph3                                                  
+D9a_Graph4                                                  
+D9b_Graph1                                                  
+D9b_Graph2                                                  
+D9b_Graph3                                                  
+D9b_Graph4                                                  
+D9c_Graph1                                                  
+D9c_Graph2                                                  
+D9c_Graph3                                                  
+D9c_Graph4                                                  
+D2a_Graph1                                                  
+N Cause 2                                             
+Cause E 2                                             
+Cause Effect  2                                             
+E B 2                                             
+D2a_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause F 2                                             
+B Effect  2                                             
+F Effect  2                                             
+D2a_Graph3                                                  
+N Cause 2                                             
+Cause E 2                                             
+Cause Effect  N                                             
+D2a_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+A F 2                                             
+A Effect  2                                             
+C B N                                             
+C E 2                                             
+D2b_Graph1                                                  
+N Cause 2                                             
+Cause E 2                                             
+E B 2                                             
+D2b_Graph2                                                  
+N Cause 2                                             
+Cause B 2                                             
+Cause F 2                                             
+B Effect  N                                             
+F Effect  N                                             
+D2b_Graph3                                                  
+N Cause 2                                             
+Cause E 2                                             
+Cause Effect  N                                             
+D2b_Graph4                                                  
+N Cause 2                                             
+Cause A 2                                             
+Cause E 2                                             
+A C 2                                             
+A F 2                                             
+A Effect  2                                             
+D10a_Graph1                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause B N                                             
+A F 2                                             
+B C 1                                             
+C E 0                                             
+E Effect  2                                             
+F Effect  2                                             
+D10a_Graph2                                                 
+N Cause 2                                             
+Cause B 2                                             
+B E 2                                             
+E Effect  2                                             
+D10a_Graph3                                                 
+N Cause 2                                             
+Cause C 0                                             
+C B 0                                             
+B E 0                                             
+E F 0                                             
+F Effect  0                                             
+D10a_Graph4                                                 
+N Cause 2                                             
+Cause A 2                                             
+A C 2                                             
+C B 2                                             
+B E 2                                             
+E Effect  1                                             
+D10b_Graph1                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause E 0                                             
+Cause Effect  2                                             
+A F N                                             
+E Effect  2                                             
+D10b_Graph2                                                 
+N Cause 2                                             
+Cause Effect  2                                             
+D10b_Graph3                                                 
+N Cause 2                                             
+Cause C 0                                             
+D10b_Graph4                                                 
+N Cause 2                                             
+Cause F 0                                             
+D10c_Graph1                                                 
+N Cause 2                                             
+Cause A 2                                             
+Cause B N                                             
+Cause E 0                                             
+Cause Effect  2                                             
+B C 1                                             
+C E 0                                             
+E F 2                                             
+F Effect  2                                             
+D10c_Graph2                                                 
+N Cause 2                                             
+Cause Effect  2                                             
+D10c_Graph3                                                 
+N Cause 2                                             
+Cause Effect  0                                             
+D10c_Graph4                                                 
+N Cause 2                                             
 Cause F 0
-B E 2
-E Effect  2
-F Effect  2
-B6a_Graph2    
-N Cause 2
-Cause Effect  1
-B6a_Graph3    
-N Cause 2
-Cause B 0
-Cause E 0
-Cause F 0
-B Effect  0
-E Effect  0
-F Effect  0
-B6a_Graph4    
-B12b_Graph1   
-N Cause 2
-Cause B N
-Cause E 2
-B Effect  2
-E Effect  2
-B12b_Graph2   
-N Cause 2
-Cause C 2
-Cause E 2
-Cause F 2
-C E 2
-C F 2
-F Effect  2
-B12b_Graph3   
-N Cause 2
-Cause B 0
-Cause E 0
-Cause F 0
-B Effect  0
-E Effect  0
-F Effect  0
-B12b_Graph4   
-N Cause 2
-Cause A 2
-Cause C 2
-Cause B 2
-Cause E 2
-Cause F 2
-A Effect  1
-B Effect  1
-E Effect  1
-F Effect  1
-B4a_Graph1    
-B4a_Graph2    
-B4a_Graph3    
-B4a_Graph4    
-B4b_Graph1    
-N Cause 2
-Cause A 2
-Cause C 1
-Cause E 2
-Cause Effect  2
-B4b_Graph2    
-N Cause 2
-Cause Effect  2
-B4b_Graph3    
-N Cause 2
-Cause G 1
-G Effect  0
-B4b_Graph4    
-B10b_Graph1   
-N Cause 2
-Cause A 2
-Cause B 2
-Cause C 2
-A C 2
-A E 2
-A F 2
-A B 2
-C F 2
-C E 2
-E Effect  2
-B10b_Graph2   
-N Cause 2
-Cause B 2
-Cause A 2
-Cause C 2
-A B 2
-A C 2
-A E 2
-A F 2
-B E 2
-B F 2
-E Effect  1
-B10b_Graph3   
-N Cause 2
-Cause A 0
-Cause B 0
-A B 0
-A C 0
-A Effect  0
-C E 0
-C Effect  0
-B E 0
-B10b_Graph4   
-B7b_Graph1    
-N Cause 2
-Cause A N
-A B N
-B C N
-C Effect  N
-Cause D N
-D E N
-E F N
-F Effect  N
-B7b_Graph2    
-N Cause 2
-Cause Effect  2
-B7b_Graph3    
-B7b_Graph4    
-B7a_Graph1    
-N Cause 2
-Cause B 2
-Cause D 2
-Cause Effect  2
-B Effect  2
-D F 0
-B7a_Graph2    
+END_Graph4
