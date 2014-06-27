@@ -18,13 +18,13 @@ final List<Node> nodes = new List<Node>();
 final Map<String, List<String>> maps = new Map<String, List<String>>();
 final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
 
+String dataFile = "causality.txt";
 int radius = 30;
 bool drawAttributes = true;
 
 void main() {
 
-  String url = "http://127.0.0.1:3030/GraphAnalytics/web/causality.txt";
-  var request = HttpRequest.getString(url).then(_onDataLoaded);
+  var request = HttpRequest.getString(dataFile).then(_onDataLoaded);
 
   int w = canvas1.width;
   int h = canvas1.height;
