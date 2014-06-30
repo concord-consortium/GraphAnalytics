@@ -31,15 +31,15 @@ void main() {
   int dx = w~/8;
   int dy = h~/8;
   radius = Math.max(dx, dy).toInt()~/2;
-  nodes.add(new Node("Cause", w~/2, dy));
-  nodes.add(new Node("A", w~/2-dx*2, dy*2));
-  nodes.add(new Node("B", w~/2-dx*3, dy*4));
-  nodes.add(new Node("C", w~/2-dx*2, dy*6));
-  nodes.add(new Node("D", w~/2+dx*2, dy*2));
-  nodes.add(new Node("E", w~/2+dx*3, dy*4));
-  nodes.add(new Node("F", w~/2+dx*2, dy*6));
-  nodes.add(new Node("G", w~/2, dy*4));
-  nodes.add(new Node("Effect", w~/2, h-dy));
+  nodes.add(new Node("Cause", w~/2, dy, ""));
+  nodes.add(new Node("A", w~/2-dx*2, dy*2, "Average kinetic energy of molecules"));
+  nodes.add(new Node("B", w~/2-dx*3, dy*4, "Frequency of molecule-piston collisions"));
+  nodes.add(new Node("C", w~/2-dx*2, dy*6, "Average speed of molecules"));
+  nodes.add(new Node("D", w~/2+dx*2, dy*2, "Mass of molecules"));
+  nodes.add(new Node("E", w~/2+dx*3, dy*4, "Total impact of molecules on piston"));
+  nodes.add(new Node("F", w~/2+dx*2, dy*6, "Average impact of a single molecule on piston"));
+  nodes.add(new Node("G", w~/2, dy*4, "Number of molecules"));
+  nodes.add(new Node("Effect", w~/2, h-dy, ""));
   
   List<Edge> list = new List<Edge>();
   list.add(new Edge(getNode("Cause"), getNode("B"), 2));

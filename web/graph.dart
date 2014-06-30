@@ -7,10 +7,12 @@ class Graph {
 
   CanvasElement canvas;
   CanvasRenderingContext2D context;
-  int radius = 30;
+  int radius = 25;
+  int arrowSize = 4;
   bool drawAttributes = true;
   String sectionID;
   String graphID;
+  Node describedNode;  
 
   final List<Edge> edges = new List<Edge>();
   final List<Edge> drawnEdges = new List<Edge>();
@@ -18,9 +20,27 @@ class Graph {
 
   Graph(this.canvas, this.graphID, this.sectionID) {
     context = canvas.context2D;
+    canvas.onMouseMove.listen(_onMouseMove);
+  }
+
+  void _onMouseMove(MouseEvent e) {
+    e.preventDefault();
+    describedNode = null;
+    for(Node n in nodes) {
+      if(n.distanceSq(e.offset.x, e.offset.y) <= radius * radius) {
+        describedNode = n;
+        break;
+      }
+    }
+    draw();
+    e.stopPropagation();
   }
 
   void draw() {
+    
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    edges.clear();
+    drawnEdges.clear();
   
     // draw correct path for the selected graph
     for(Edge e in correctPaths[graphID]) _drawPath(e);
@@ -33,7 +53,32 @@ class Graph {
     for(Edge e in edges) _drawEdge(e);
 
     _drawNodes(graphID == "Graph3" || graphID == "Graph4");
+    
+    _drawTitle();
 
+  }
+  
+  String _getDescription(Node n) {
+    if(n == null) return "Class " + sectionID + ": " + graphID;
+    if(n.name == "Cause") {
+      if(graphID == "Graph1") return "Increase number of molecules";      
+      if(graphID == "Graph2") return "Increase number of molecules";      
+      if(graphID == "Graph3") return "Increase volume";      
+      if(graphID == "Graph4") return "Increase temperature";      
+    }
+    if(n.name == "Effect") {
+      if(graphID == "Graph1") return "Volume";
+      if(graphID == "Graph2") return "Pressure";      
+      if(graphID == "Graph3") return "Pressure";      
+      if(graphID == "Graph4") return "Pressure";      
+    }
+    return n.description;     
+  }
+
+  void _drawTitle() {
+    context..font = "10px Arial Bold"
+           ..fillStyle = "rgb(0, 0, 0)"
+           ..fillText(_getDescription(describedNode), 0, 10);
   }
 
   void _drawNodes(bool drawG) {
@@ -67,7 +112,15 @@ class Graph {
   int _countEdge(Edge e) {
     int count = 0;
     for(Edge x in edges) {
-      if((x.a == e.a && x.b == e.b) || (x.a == e.b && x.b == e.a)) count++;
+      if(x.a == e.a && x.b == e.b) count++;
+    }
+    return count;
+  }
+
+  int _countReverseEdge(Edge e) {
+    int count = 0;
+    for(Edge x in edges) {
+      if(x.a == e.b && x.b == e.a) count++;
     }
     return count;
   }
@@ -126,26 +179,28 @@ class Graph {
 
   void _drawEdge(Edge e) {
     for(Edge x in drawnEdges) {
-      if((x.a == e.a && x.b == e.b) || (x.a == e.b && x.b == e.a)) return;
+      if(x.a == e.a && x.b == e.b) return;
     }
     drawnEdges.add(e);
+    int count = _countEdge(e);
+    int countReverse = _countReverseEdge(e);
     int dx = e.b.x - e.a.x;
     int dy = e.b.y - e.a.y;
     double r = 1 / Math.sqrt(dx * dx + dy * dy);
     double arrowx = dx * r;
     double arrowy = dy * r;
-    double x1 = e.a.x + radius * arrowx;
-    double y1 = e.a.y + radius * arrowy;
-    double x2 = e.b.x - radius * arrowx ;
-    double y2 = e.b.y - radius * arrowy;
-    int count = _countEdge(e);
+    double x1 = e.a.x + radius * arrowx + countReverse * arrowy;
+    double y1 = e.a.y + radius * arrowy - countReverse * arrowx;
+    double x2 = e.b.x - radius * arrowx + countReverse * arrowy ;
+    double y2 = e.b.y - radius * arrowy - countReverse * arrowx;
     String color = "black";
     _drawLine(x1, y1, x2, y2, count, color);
-    if(drawAttributes)
+    if(drawAttributes) {
       context..font = "10px Arial"
              ..fillStyle = "rgb(0, 0, 0)"
              ..fillText(count.toString(), x2 - arrowx * 20 - (count + 8) * arrowy, y2 - arrowy * 20 + (count + 8) * arrowx);
-    r = 10.0 + count * 1.5;
+    }
+    r = arrowSize + count * 1.5;
     double wingx = r * (arrowx * COS + arrowy * SIN);
     double wingy = r * (arrowy * COS - arrowx * SIN);
     _drawLine(x2, y2, x2 - wingx, y2 - wingy, 1, color);
