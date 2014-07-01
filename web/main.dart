@@ -12,6 +12,10 @@ part 'node.dart';
 
 final SelectElement classMenu = querySelector("#classID");
 final SelectElement studentMenu = querySelector("#studentID");
+final RadioButtonInputElement edgeCountRadioButton = querySelector("#count");
+final RadioButtonInputElement edgeVerbRadioButton = querySelector("#verb");
+final RadioButtonInputElement edgeNoneRadioButton = querySelector("#none");
+
 final List<Node> nodes = new List<Node>();
 final Map<String, List<String>> maps = new Map<String, List<String>>();
 final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
@@ -22,7 +26,7 @@ final List<String> selectedStudents = new List<String>();
 
 String dataFile = "causality.txt";
 int radius = 30;
-bool drawAttributes = true;
+int drawAttributes = 0;
 
 void main() {
 
@@ -45,31 +49,31 @@ void main() {
   nodes.add(new Node("Effect", w~/2, h-dy, ""));
   
   List<Edge> list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), 2));
-  list.add(new Edge(getNode("B"), getNode("E"), 2));
-  list.add(new Edge(getNode("E"), getNode("Effect"), 2));
+  list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
+  list.add(new Edge(getNode("B"), getNode("E"), "2"));
+  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
   correctPaths["Graph1"] = list;
   
   list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), 2));
-  list.add(new Edge(getNode("B"), getNode("E"), 2));
-  list.add(new Edge(getNode("E"), getNode("Effect"), 2));
+  list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
+  list.add(new Edge(getNode("B"), getNode("E"), "2"));
+  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
   correctPaths["Graph2"] = list;
   
   list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), 0));
-  list.add(new Edge(getNode("B"), getNode("E"), 0));
-  list.add(new Edge(getNode("E"), getNode("Effect"), 0));
+  list.add(new Edge(getNode("Cause"), getNode("B"), "0"));
+  list.add(new Edge(getNode("B"), getNode("E"), "0"));
+  list.add(new Edge(getNode("E"), getNode("Effect"), "0"));
   correctPaths["Graph3"] = list;
   
   list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("A"), 2));
-  list.add(new Edge(getNode("A"), getNode("C"), 2));
-  list.add(new Edge(getNode("C"), getNode("B"), 2));
-  list.add(new Edge(getNode("C"), getNode("F"), 2));
-  list.add(new Edge(getNode("B"), getNode("E"), 2));
-  list.add(new Edge(getNode("F"), getNode("E"), 2));
-  list.add(new Edge(getNode("E"), getNode("Effect"), 2));
+  list.add(new Edge(getNode("Cause"), getNode("A"), "2"));
+  list.add(new Edge(getNode("A"), getNode("C"), "2"));
+  list.add(new Edge(getNode("C"), getNode("B"), "2"));
+  list.add(new Edge(getNode("C"), getNode("F"), "2"));
+  list.add(new Edge(getNode("B"), getNode("E"), "2"));
+  list.add(new Edge(getNode("F"), getNode("E"), "2"));
+  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
   correctPaths["Graph4"] = list;
   
   HttpRequest.getString(dataFile).then(_onDataLoaded);
@@ -90,6 +94,21 @@ void main() {
     selectedStudents.clear();
     for(OptionElement o in studentMenu.selectedOptions)
       selectedStudents.add(o.value);
+    _redrawAllGraphs();
+  });
+  
+  edgeCountRadioButton.onClick.listen((e) {
+    drawAttributes = int.parse(edgeCountRadioButton.value);
+    _redrawAllGraphs();
+  });
+
+  edgeVerbRadioButton.onClick.listen((e) {
+    drawAttributes = int.parse(edgeVerbRadioButton.value);
+    _redrawAllGraphs();
+  });
+
+  edgeNoneRadioButton.onClick.listen((e) {
+    drawAttributes = int.parse(edgeNoneRadioButton.value);
     _redrawAllGraphs();
   });
 

@@ -9,7 +9,6 @@ class Graph {
   CanvasRenderingContext2D context;
   int radius = 25;
   int arrowSize = 4;
-  bool drawAttributes = true;
   String classID;
   String graphID;
   Node describedNode;
@@ -73,7 +72,7 @@ class Graph {
         if (p1.x == 0 && p1.y == 0) return;
         Math.Point p2 = _getRelativePoint(p1);
         selectedNode.set(p2.x.toInt() - _dragStartPointX.toInt(), p2.y.toInt() - _dragStartPointY.toInt());
-      }    
+      }
       
     } else {
 
@@ -84,6 +83,7 @@ class Graph {
           break;
         }
       }
+      canvas.style.cursor = describedNode != null? "pointer" : "default";
 
     }
 
@@ -264,11 +264,23 @@ class Graph {
     double y2 = e.b.y - radius * arrowy - countReverse * arrowx;
     String color = "black";
     _drawLine(x1, y1, x2, y2, count, color);
-    if(drawAttributes) {
-      context..font = "10px Arial"
-             ..fillStyle = "rgb(0, 0, 0)"
-             ..fillText(count.toString(), x2 - arrowx * 20 - (count + 8) * arrowy, y2 - arrowy * 20 + (count + 8) * arrowx);
+    String attribute = "";
+    switch(drawAttributes) {
+    case 0:
+      attribute = count.toString();
+      break;
+    case 1:
+      if(e.action == "2") 
+        attribute = "I";
+      else if(e.action == "1") 
+        attribute = "S";
+      else if(e.action == "0")
+        attribute = "D";
+      break;
     }
+    context..font = "10px Arial"
+           ..fillStyle = "rgb(0, 0, 0)"
+           ..fillText(attribute, x2 - arrowx * 20 - (count + 8) * arrowy, y2 - arrowy * 20 + (count + 8) * arrowx);
     r = arrowSize + count * 1.5;
     double wingx = r * (arrowx * COS + arrowy * SIN);
     double wingy = r * (arrowy * COS - arrowx * SIN);
