@@ -13,31 +13,92 @@ class Graph {
   String classID;
   String graphID;
   Node describedNode;
+  Node selectedNode;
 
   final List<Edge> edges = new List<Edge>();
   final List<Edge> drawnEdges = new List<Edge>();
+  
+  bool _drag = false;
+  num _dragStartPointX, _dragStartPointY;
 
 
   Graph(this.canvas, this.graphID, this.classID) {
     context = canvas.context2D;
     canvas.onMouseMove.listen(_onMouseMove);
+    canvas.onMouseDown.listen(_onMouseDown);
+    canvas.onMouseUp.listen(_onMouseUp);
+    canvas.onMouseLeave.listen(_onMouseOut);
   }
   
   void setClassID(String classID) {
     this.classID = classID;
   }
   
-  void _onMouseMove(MouseEvent e) {
+  void _onMouseOut(MouseEvent e) {
+    _drag=false;
+    selectedNode = null;
+  }
+  
+  void _onMouseDown(MouseEvent e) {
     e.preventDefault();
-    describedNode = null;
     for(Node n in nodes) {
-      if(n.distanceSq(e.offset.x, e.offset.y) <= radius * radius) {
-        describedNode = n;
+      if(_withinNode(e, n)) {
+        selectedNode = n;
         break;
       }
     }
+    _drag = true;
+    Math.Point p = _getRelativePoint(e.client);
+    _dragStartPointX = p.x - selectedNode.x;
+    _dragStartPointY = p.y - selectedNode.y;
+    e.stopPropagation();
+  }
+  
+  void _onMouseUp(MouseEvent e) {
+    e.preventDefault();
+    _drag = false;
+    selectedNode = null;
+    e.stopPropagation();
+  }
+  
+  void _onMouseMove(MouseEvent e) {
+
+    e.preventDefault();
+
+    if(_drag) {
+
+      if(selectedNode != null) {
+        canvas.style.cursor = "pointer";
+        Math.Point p1 = e.client;
+        if (p1.x == 0 && p1.y == 0) return;
+        Math.Point p2 = _getRelativePoint(p1);
+        selectedNode.set(p2.x.toInt() - _dragStartPointX.toInt(), p2.y.toInt() - _dragStartPointY.toInt());
+      }    
+      
+    } else {
+
+      describedNode = null;
+      for(Node n in nodes) {
+        if(_withinNode(e, n)) {
+          describedNode = n;
+          break;
+        }
+      }
+
+    }
+
     draw();
     e.stopPropagation();
+
+  }
+  
+  Math.Point _getRelativePoint(Math.Point p) {
+    Math.Rectangle boundRect = canvas.getBoundingClientRect();
+    return new Math.Point(p.x - boundRect.left, p.y - boundRect.top);
+  }
+
+  bool _withinNode(MouseEvent e, Node n) {
+    return n.distanceSq(e.offset.x, e.offset.y) <= radius * radius;
   }
 
   void draw() {
