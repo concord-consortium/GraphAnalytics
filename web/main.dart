@@ -10,6 +10,7 @@ part 'node.dart';
 
 // global variables
 
+final SelectElement classMenu = querySelector("#classID");
 final CanvasElement canvas1 = querySelector("#canvas1");
 final CanvasElement canvas2 = querySelector("#canvas2");
 final CanvasElement canvas3 = querySelector("#canvas3");
@@ -17,6 +18,11 @@ final CanvasElement canvas4 = querySelector("#canvas4");
 final List<Node> nodes = new List<Node>();
 final Map<String, List<String>> maps = new Map<String, List<String>>();
 final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
+
+Graph graph1;
+Graph graph2;
+Graph graph3;
+Graph graph4;
 
 String dataFile = "causality.txt";
 int radius = 30;
@@ -69,7 +75,15 @@ void main() {
   list.add(new Edge(getNode("E"), getNode("Effect"), 2));
   correctPaths["Graph4"] = list;
   
+  classMenu.onChange.listen((e) {
+    graph1.setClassID(classMenu.value);
+    graph2.setClassID(classMenu.value);
+    graph3.setClassID(classMenu.value);
+    graph4.setClassID(classMenu.value);
+  });
+
 }
+
 
 Node getNode(String name) {
   for(Node n in nodes) {
@@ -99,9 +113,14 @@ void _onDataLoaded(String responseText) {
     }
   }
   
-  new Graph(canvas1, "Graph1", "E").draw();
-  new Graph(canvas2, "Graph2", "E").draw();
-  new Graph(canvas3, "Graph3", "E").draw();
-  new Graph(canvas4, "Graph4", "E").draw();
+  graph1 = new Graph(canvas1, "Graph1", "B");
+  graph2 = new Graph(canvas2, "Graph2", "B");
+  graph3 = new Graph(canvas3, "Graph3", "B");
+  graph4 = new Graph(canvas4, "Graph4", "B");
+  
+  graph1.draw();
+  graph2.draw();
+  graph3.draw();
+  graph4.draw();
   
 }

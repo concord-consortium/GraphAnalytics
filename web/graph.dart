@@ -10,7 +10,7 @@ class Graph {
   int radius = 25;
   int arrowSize = 4;
   bool drawAttributes = true;
-  String sectionID;
+  String classID;
   String graphID;
   Node describedNode;  
 
@@ -18,11 +18,16 @@ class Graph {
   final List<Edge> drawnEdges = new List<Edge>();
 
 
-  Graph(this.canvas, this.graphID, this.sectionID) {
+  Graph(this.canvas, this.graphID, this.classID) {
     context = canvas.context2D;
     canvas.onMouseMove.listen(_onMouseMove);
   }
-
+  
+  void setClassID(String classID) {
+    this.classID = classID;
+    draw();
+  }
+  
   void _onMouseMove(MouseEvent e) {
     e.preventDefault();
     describedNode = null;
@@ -47,7 +52,7 @@ class Graph {
   
     // draw student data
     for(String key in maps.keys) {
-      if(key.startsWith(sectionID) && key.endsWith(graphID)) _createEdges(key);      
+      if(key.startsWith(classID) && key.endsWith(graphID)) _createEdges(key);      
     }
 
     for(Edge e in edges) _drawEdge(e);
@@ -59,7 +64,7 @@ class Graph {
   }
   
   String _getDescription(Node n) {
-    if(n == null) return "Class " + sectionID + ": " + graphID;
+    if(n == null) return "Class " + classID + ": " + graphID;
     if(n.name == "Cause") {
       if(graphID == "Graph1") return "Increase number of molecules";      
       if(graphID == "Graph2") return "Increase number of molecules";      
