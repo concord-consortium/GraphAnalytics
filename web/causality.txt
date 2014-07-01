@@ -309,7 +309,7 @@ Cause F 0
 B Effect  0                                             
 E Effect  0                                             
 F Effect  0                                             
-B12a_Graph4(messy)                                                  
+B12a_Graph4                                                
 B1b_Graph1                                                  
 N Cause 2                                             
 Cause A 2                                             
@@ -618,7 +618,7 @@ A C 2
 C B 2                                             
 C Effect  2                                             
 C E 2                                             
-E3b_Graph1(The best one is here)                                                  
+E3b_Graph1                                                  
 N Cause 2                                             
 Cause B 2                                             
 Cause E 2                                             

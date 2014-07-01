@@ -11,6 +11,7 @@ part 'node.dart';
 // global variables
 
 final SelectElement classMenu = querySelector("#classID");
+final SelectElement studentMenu = querySelector("#studentID");
 final CanvasElement canvas1 = querySelector("#canvas1");
 final CanvasElement canvas2 = querySelector("#canvas2");
 final CanvasElement canvas3 = querySelector("#canvas3");
@@ -29,9 +30,7 @@ int radius = 30;
 bool drawAttributes = true;
 
 void main() {
-
-  var request = HttpRequest.getString(dataFile).then(_onDataLoaded);
-
+  
   int w = canvas1.width;
   int h = canvas1.height;
   int dx = w~/8;
@@ -75,15 +74,58 @@ void main() {
   list.add(new Edge(getNode("E"), getNode("Effect"), 2));
   correctPaths["Graph4"] = list;
   
+  HttpRequest.getString(dataFile).then(_onDataLoaded);
+
+  _addClass("B");
+  _addClass("D");
+  _addClass("E");
+
   classMenu.onChange.listen((e) {
-    graph1.setClassID(classMenu.value);
-    graph2.setClassID(classMenu.value);
-    graph3.setClassID(classMenu.value);
-    graph4.setClassID(classMenu.value);
+    String classID = classMenu.value;
+    graph1.setClassID(classID);
+    graph2.setClassID(classID);
+    graph3.setClassID(classID);
+    graph4.setClassID(classID);
+    _populateStudentMenu(classID);
   });
 
 }
 
+void _addClass(String id) {
+  OptionElement oe = new OptionElement();
+  oe.text = "Class " + id;
+  oe.value =id;
+  classMenu.append(oe); 
+}
+
+
+void _addStudent(String id, bool selected) {
+  for(OptionElement e in studentMenu.childNodes) {
+    if(e.value == id) return;    
+  }
+  OptionElement oe = new OptionElement();
+  oe.text = "Student " + id;
+  oe.value = id;
+  oe.selected = selected;
+  studentMenu.append(oe); 
+}
+
+void _populateStudentMenu(String classID) {
+  studentMenu.nodes.clear();
+  List keys = maps.keys.toList()..sort((x, y) {
+    int i  = x.indexOf("_");
+    int j  = y.indexOf("_");
+    i = int.parse(x.substring(1, i - 1));
+    j = int.parse(y.substring(1, j - 1));
+    return i.compareTo(j);
+  });
+  for(String key in keys) {
+    if(key.startsWith(classID)) {
+      int i  = key.indexOf("_");
+      _addStudent(key.substring(0, i), true);
+    }
+  }
+}
 
 Node getNode(String name) {
   for(Node n in nodes) {
@@ -113,10 +155,13 @@ void _onDataLoaded(String responseText) {
     }
   }
   
-  graph1 = new Graph(canvas1, "Graph1", "B");
-  graph2 = new Graph(canvas2, "Graph2", "B");
-  graph3 = new Graph(canvas3, "Graph3", "B");
-  graph4 = new Graph(canvas4, "Graph4", "B");
+  String classID = classMenu.value;
+  _populateStudentMenu(classID);
+  
+  graph1 = new Graph(canvas1, "Graph1", classID);
+  graph2 = new Graph(canvas2, "Graph2", classID);
+  graph3 = new Graph(canvas3, "Graph3", classID);
+  graph4 = new Graph(canvas4, "Graph4", classID);
   
   graph1.draw();
   graph2.draw();
