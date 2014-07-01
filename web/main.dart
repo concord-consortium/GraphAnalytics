@@ -12,27 +12,25 @@ part 'node.dart';
 
 final SelectElement classMenu = querySelector("#classID");
 final SelectElement studentMenu = querySelector("#studentID");
-final CanvasElement canvas1 = querySelector("#canvas1");
-final CanvasElement canvas2 = querySelector("#canvas2");
-final CanvasElement canvas3 = querySelector("#canvas3");
-final CanvasElement canvas4 = querySelector("#canvas4");
 final List<Node> nodes = new List<Node>();
 final Map<String, List<String>> maps = new Map<String, List<String>>();
 final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
 
-Graph graph1;
-Graph graph2;
-Graph graph3;
-Graph graph4;
+final List<CanvasElement> canvases = new List<CanvasElement>();
+final List<Graph> graphes = new List<Graph>();
+final List<String> selectedStudents = new List<String>();
 
 String dataFile = "causality.txt";
 int radius = 30;
 bool drawAttributes = true;
 
 void main() {
-  
-  int w = canvas1.width;
-  int h = canvas1.height;
+
+  for(int i = 0; i < 4; i++)
+    canvases.add(querySelector("#canvas" + (i+1).toString()));
+
+  int w = canvases[0].width;
+  int h = canvases[0].height;
   int dx = w~/8;
   int dy = h~/8;
   radius = Math.max(dx, dy).toInt()~/2;
@@ -81,12 +79,18 @@ void main() {
   _addClass("E");
 
   classMenu.onChange.listen((e) {
-    String classID = classMenu.value;
-    graph1.setClassID(classID);
-    graph2.setClassID(classID);
-    graph3.setClassID(classID);
-    graph4.setClassID(classID);
-    _populateStudentMenu(classID);
+    selectedStudents.clear();
+    for(Graph g in graphes) 
+       g.setClassID(classMenu.value);
+    _populateStudentMenu(classMenu.value);
+    _redrawAllGraphs();
+  });
+
+  studentMenu.onChange.listen((e) {
+    selectedStudents.clear();
+    for(OptionElement o in studentMenu.selectedOptions)
+      selectedStudents.add(o.value);
+    _redrawAllGraphs();
   });
 
 }
@@ -107,7 +111,8 @@ void _addStudent(String id, bool selected) {
   oe.text = "Student " + id;
   oe.value = id;
   oe.selected = selected;
-  studentMenu.append(oe); 
+  studentMenu.append(oe);
+  selectedStudents.add(id);
 }
 
 void _populateStudentMenu(String classID) {
@@ -134,6 +139,11 @@ Node getNode(String name) {
   return null;
 }
 
+void _redrawAllGraphs() {
+  for(Graph g in graphes)
+    g.draw();
+}
+
 void _onDataLoaded(String responseText) {
   
   // read student data
@@ -157,15 +167,11 @@ void _onDataLoaded(String responseText) {
   
   String classID = classMenu.value;
   _populateStudentMenu(classID);
-  
-  graph1 = new Graph(canvas1, "Graph1", classID);
-  graph2 = new Graph(canvas2, "Graph2", classID);
-  graph3 = new Graph(canvas3, "Graph3", classID);
-  graph4 = new Graph(canvas4, "Graph4", classID);
-  
-  graph1.draw();
-  graph2.draw();
-  graph3.draw();
-  graph4.draw();
+
+  for(int i = 0; i < 4; i++) {
+    Graph g = new Graph(canvases[i], "Graph" + (i+1).toString(), classID);
+    g.draw();
+    graphes.add(g);
+  }
   
 }

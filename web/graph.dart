@@ -12,7 +12,7 @@ class Graph {
   bool drawAttributes = true;
   String classID;
   String graphID;
-  Node describedNode;  
+  Node describedNode;
 
   final List<Edge> edges = new List<Edge>();
   final List<Edge> drawnEdges = new List<Edge>();
@@ -25,7 +25,6 @@ class Graph {
   
   void setClassID(String classID) {
     this.classID = classID;
-    draw();
   }
   
   void _onMouseMove(MouseEvent e) {
@@ -52,7 +51,11 @@ class Graph {
   
     // draw student data
     for(String key in maps.keys) {
-      if(key.startsWith(classID) && key.endsWith(graphID)) _createEdges(key);      
+      if(key.startsWith(classID) && key.endsWith(graphID)) {
+        String x = key.substring(0, key.indexOf("_"));
+        if(selectedStudents.contains(x))
+          _createEdges(key);
+      }
     }
 
     for(Edge e in edges) _drawEdge(e);
