@@ -230,8 +230,8 @@ B E 2
 E Effect  2                                             
 B9a_Graph2                                                  
 N Cause 2                                             
-Cause G 2                                             
-G B 2                                             
+Cause E 2                                             
+E B 2                                             
 B Effect  0                                             
 B9a_Graph3                                                  
 N Cause 2                                             
