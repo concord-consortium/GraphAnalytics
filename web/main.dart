@@ -16,9 +16,8 @@ final RadioButtonInputElement edgeCountRadioButton = querySelector("#count");
 final RadioButtonInputElement edgeVerbRadioButton = querySelector("#verb");
 final RadioButtonInputElement edgeNoneRadioButton = querySelector("#none");
 
-final List<Node> nodes = new List<Node>();
+final List<Node> _nodes = new List<Node>();
 final Map<String, List<String>> maps = new Map<String, List<String>>();
-final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
 
 final List<CanvasElement> canvases = new List<CanvasElement>();
 final List<Graph> graphes = new List<Graph>();
@@ -38,43 +37,15 @@ void main() {
   int dx = w~/8;
   int dy = h~/8;
   radius = Math.max(dx, dy).toInt()~/2;
-  nodes.add(new Node("Cause", w~/2, dy, ""));
-  nodes.add(new Node("A", w~/2-dx*2, dy*2, "Average kinetic energy of molecules"));
-  nodes.add(new Node("B", w~/2-dx*3, dy*4, "Frequency of molecule-piston collisions"));
-  nodes.add(new Node("C", w~/2-dx*2, dy*6, "Average speed of molecules"));
-  nodes.add(new Node("D", w~/2+dx*2, dy*2, "Mass of molecules"));
-  nodes.add(new Node("E", w~/2+dx*3, dy*4, "Total impact of molecules on piston"));
-  nodes.add(new Node("F", w~/2+dx*2, dy*6, "Average impact of a single molecule on piston"));
-  nodes.add(new Node("G", w~/2, dy*4, "Number of molecules"));
-  nodes.add(new Node("Effect", w~/2, h-dy, ""));
-  
-  List<Edge> list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
-  list.add(new Edge(getNode("B"), getNode("E"), "2"));
-  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
-  correctPaths["Graph1"] = list;
-  
-  list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
-  list.add(new Edge(getNode("B"), getNode("E"), "2"));
-  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
-  correctPaths["Graph2"] = list;
-  
-  list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("B"), "0"));
-  list.add(new Edge(getNode("B"), getNode("E"), "0"));
-  list.add(new Edge(getNode("E"), getNode("Effect"), "0"));
-  correctPaths["Graph3"] = list;
-  
-  list = new List<Edge>();
-  list.add(new Edge(getNode("Cause"), getNode("A"), "2"));
-  list.add(new Edge(getNode("A"), getNode("C"), "2"));
-  list.add(new Edge(getNode("C"), getNode("B"), "2"));
-  list.add(new Edge(getNode("C"), getNode("F"), "2"));
-  list.add(new Edge(getNode("B"), getNode("E"), "2"));
-  list.add(new Edge(getNode("F"), getNode("E"), "2"));
-  list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
-  correctPaths["Graph4"] = list;
+  _nodes.add(new Node("Cause", w~/2, dy, ""));
+  _nodes.add(new Node("A", w~/2-dx*2, dy*2, "Average kinetic energy of molecules"));
+  _nodes.add(new Node("B", w~/2-dx*3, dy*4, "Frequency of molecule-piston collisions"));
+  _nodes.add(new Node("C", w~/2-dx*2, dy*6, "Average speed of molecules"));
+  _nodes.add(new Node("D", w~/2+dx*2, dy*2, "Mass of molecules"));
+  _nodes.add(new Node("E", w~/2+dx*3, dy*4, "Total impact of molecules on piston"));
+  _nodes.add(new Node("F", w~/2+dx*2, dy*6, "Average impact of a single molecule on piston"));
+  _nodes.add(new Node("G", w~/2, dy*4, "Number of molecules"));
+  _nodes.add(new Node("Effect", w~/2, h-dy, ""));
   
   HttpRequest.getString(dataFile).then(_onDataLoaded);
 
@@ -151,13 +122,6 @@ void _populateStudentMenu(String classID) {
   }
 }
 
-Node getNode(String name) {
-  for(Node n in nodes) {
-    if(n.name == name) return n;
-  }
-  return null;
-}
-
 void _redrawAllGraphs() {
   for(Graph g in graphes)
     g.draw();
@@ -189,6 +153,7 @@ void _onDataLoaded(String responseText) {
 
   for(int i = 0; i < 4; i++) {
     Graph g = new Graph(canvases[i], "Graph" + (i+1).toString(), classID);
+    g.copyNodes(_nodes);
     g.draw();
     graphes.add(g);
   }

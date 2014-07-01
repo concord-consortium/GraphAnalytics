@@ -14,8 +14,10 @@ class Graph {
   Node describedNode;
   Node selectedNode;
 
+  final List<Node> nodes = new List<Node>();
   final List<Edge> edges = new List<Edge>();
   final List<Edge> drawnEdges = new List<Edge>();
+  final Map<String, List<Edge>> correctPaths = new Map<String, List<Edge>>();
   
   bool _drag = false;
   num _dragStartPointX, _dragStartPointY;
@@ -27,6 +29,40 @@ class Graph {
     canvas.onMouseDown.listen(_onMouseDown);
     canvas.onMouseUp.listen(_onMouseUp);
     canvas.onMouseLeave.listen(_onMouseOut);
+  }
+  
+  void copyNodes(List<Node> orig) {
+    for(Node n in orig) {
+      nodes.add(new Node(n.name, n.x, n.y, n.description));
+    }
+    List<Edge> list = new List<Edge>();
+    list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
+    list.add(new Edge(getNode("B"), getNode("E"), "2"));
+    list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
+    correctPaths["Graph1"] = list;
+    
+    list = new List<Edge>();
+    list.add(new Edge(getNode("Cause"), getNode("B"), "2"));
+    list.add(new Edge(getNode("B"), getNode("E"), "2"));
+    list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
+    correctPaths["Graph2"] = list;
+    
+    list = new List<Edge>();
+    list.add(new Edge(getNode("Cause"), getNode("B"), "0"));
+    list.add(new Edge(getNode("B"), getNode("E"), "0"));
+    list.add(new Edge(getNode("E"), getNode("Effect"), "0"));
+    correctPaths["Graph3"] = list;
+    
+    list = new List<Edge>();
+    list.add(new Edge(getNode("Cause"), getNode("A"), "2"));
+    list.add(new Edge(getNode("A"), getNode("C"), "2"));
+    list.add(new Edge(getNode("C"), getNode("B"), "2"));
+    list.add(new Edge(getNode("C"), getNode("F"), "2"));
+    list.add(new Edge(getNode("B"), getNode("E"), "2"));
+    list.add(new Edge(getNode("F"), getNode("E"), "2"));
+    list.add(new Edge(getNode("E"), getNode("Effect"), "2"));
+    correctPaths["Graph4"] = list;
+    
   }
   
   void setClassID(String classID) {
@@ -47,9 +83,11 @@ class Graph {
       }
     }
     _drag = true;
-    Math.Point p = _getRelativePoint(e.client);
-    _dragStartPointX = p.x - selectedNode.x;
-    _dragStartPointY = p.y - selectedNode.y;
+    if(selectedNode != null) {
+      Math.Point p = _getRelativePoint(e.client);
+      _dragStartPointX = p.x - selectedNode.x;
+     _dragStartPointY = p.y - selectedNode.y;
+    }
     e.stopPropagation();
   }
   
@@ -162,6 +200,13 @@ class Graph {
         }
       }
     }
+  }
+
+  Node getNode(String name) {
+    for(Node n in nodes) {
+      if(n.name == name) return n;
+    }
+    return null;
   }
 
   void _createEdges(String key) {
