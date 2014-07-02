@@ -12,6 +12,8 @@ part 'node.dart';
 
 final SelectElement classMenu = querySelector("#classID");
 final SelectElement studentMenu = querySelector("#studentID");
+final HtmlElement classStudentNumberElement = querySelector("#class_students");
+final HtmlElement selectedStudentNumberElement = querySelector("#selected_students");
 final RadioButtonInputElement edgeCountRadioButton = querySelector("#count");
 final RadioButtonInputElement edgeVerbRadioButton = querySelector("#verb");
 final RadioButtonInputElement edgeNoneRadioButton = querySelector("#none");
@@ -65,6 +67,7 @@ void main() {
     selectedStudents.clear();
     for(OptionElement o in studentMenu.selectedOptions)
       selectedStudents.add(o.value);
+    selectedStudentNumberElement.innerHtml = selectedStudents.length.toString() + " selected";
     _redrawAllGraphs();
   });
   
@@ -93,9 +96,9 @@ void _addClass(String id) {
 }
 
 
-void _addStudent(String id, bool selected) {
+bool _addStudent(String id, bool selected) {
   for(OptionElement e in studentMenu.childNodes) {
-    if(e.value == id) return;    
+    if(e.value == id) return false;    
   }
   OptionElement oe = new OptionElement();
   oe.text = "Student " + id;
@@ -103,6 +106,7 @@ void _addStudent(String id, bool selected) {
   oe.selected = selected;
   studentMenu.append(oe);
   selectedStudents.add(id);
+  return true;
 }
 
 void _populateStudentMenu(String classID) {
@@ -114,12 +118,15 @@ void _populateStudentMenu(String classID) {
     j = int.parse(y.substring(1, j - 1));
     return i.compareTo(j);
   });
+  int studentCount = 0;
   for(String key in keys) {
     if(key.startsWith(classID)) {
       int i  = key.indexOf("_");
-      _addStudent(key.substring(0, i), true);
+      if(_addStudent(key.substring(0, i), true)) studentCount++;
     }
   }
+  classStudentNumberElement.innerHtml = studentCount.toString() + " students";
+  selectedStudentNumberElement.innerHtml = selectedStudents.length.toString() + " selected";
 }
 
 void _redrawAllGraphs() {

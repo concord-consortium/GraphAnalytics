@@ -8,8 +8,13 @@ body {
   margin: 15px;
 }
 
-h1, p {
+h3, p {
   color: #333;
+}
+
+table { 
+    border-spacing: 20px 0;
+    border-collapse: separate;
 }
 
 #sample_container_id {
