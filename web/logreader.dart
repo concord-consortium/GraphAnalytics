@@ -30,6 +30,7 @@ List<int> switchCount = new List<int>();
 void main() {
   
   HttpRequest.getString(dataFile).then(_onDataLoaded);
+  
 
 }
 
