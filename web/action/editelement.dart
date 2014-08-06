@@ -4,7 +4,7 @@ class EditElement extends Action {
   
   int buildingID;
   int elementID;
-  List coordinates;
+  List<Point3D> coordinates;
 
   EditElement(String type, String timestamp, String file, this.buildingID, this.elementID, this.coordinates) : super(type, timestamp, file);
 
