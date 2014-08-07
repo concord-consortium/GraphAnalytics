@@ -2,8 +2,8 @@ part of graph;
 
 class Graph {
 
-  final double COS = Math.cos(30*Math.PI/180);
-  final double SIN = Math.sin(30*Math.PI/180);
+  final double COS = Math.cos(30 * Math.PI / 180);
+  final double SIN = Math.sin(30 * Math.PI / 180);
 
   CanvasElement canvas;
   CanvasRenderingContext2D context;

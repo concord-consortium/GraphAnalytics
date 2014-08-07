@@ -2,7 +2,9 @@ library space;
 
 import 'dart:convert';
 import 'dart:html';
+import 'dart:math' as Math;
 
+part 'polarplot.dart';
 part 'action/action.dart';
 part 'action/movecamera.dart';
 part 'action/editelement.dart';
@@ -50,7 +52,7 @@ void _addEditElementAction(Map activity, String type) {
     }
     Action a = new EditElement(type, activity["Timestamp"], activity["File"], buildingID, wallID, points);
     actions.add(a);
-    print(a.toString());
+    // print(a.toString());
   }
 }
 
@@ -63,7 +65,7 @@ void _addMoveCameraAction(Map activity) {
     Point3D direction = new Point3D(dir["x"], dir["y"], dir["z"]);
     Action a = new MoveCamera(activity["Timestamp"], activity["File"], position, direction);
     actions.add(a);
-    print(a.toString());
+    // print(a.toString());
   }
 }
 
@@ -71,7 +73,7 @@ void _addSetParameterAction(Map activity, String type) {
   if(activity.containsKey(type)) {
     Action a = new SetParameter(type, activity["Timestamp"], activity["File"], activity["Time"]);
     actions.add(a);
-    print(a.toString());
+    // print(a.toString());
   }
 }
 
@@ -84,7 +86,7 @@ void _scanActions(Map activity) {
 void _doubleCheck() {
    int count = 0;
    for(Action a in actions) {
-     if(a.type == "Set Time") count++;
+     if(a.type == "Time") count++;
    }
    print(count);
 }
@@ -101,5 +103,8 @@ void _onDataLoaded(String responseText) {
   }
   
   _doubleCheck();
+  
+  PolarPlot plot = new PolarPlot(canvas, actions);
+  plot.draw();
   
 }
