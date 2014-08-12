@@ -78,7 +78,7 @@ void _addSetParameterAction(Map activity, String type) {
 }
 
 void _scanActions(Map activity) {
-  _addMoveCameraAction(activity);
+  //_addMoveCameraAction(activity);
   for(String s in elementActions) _addEditElementAction(activity, s);
   for(String s in parameterActions) _addSetParameterAction(activity, s);
 }
@@ -102,7 +102,7 @@ void _onDataLoaded(String responseText) {
     _scanActions(activity);
   }
   
-  _doubleCheck();
+  //_doubleCheck();
   
   PolarPlot plot = new PolarPlot(canvas, actions);
   plot.draw();

@@ -16,6 +16,7 @@ class PolarPlot {
   bool _drag = false;
   num _dragStartPointX, _dragStartPointY;
   Map<String, int> _actionMap;
+  List<Point> _vertices = new List<Point>();
 
 
   PolarPlot(this.canvas, this.actions) {
@@ -73,7 +74,8 @@ class PolarPlot {
   }
   
   void draw() {
-    
+
+    context.save();
     context.clearRect(0, 0, canvas.width, canvas.height);
     
     double xc = canvas.width / 2;
@@ -85,7 +87,7 @@ class PolarPlot {
     double angle;
     for(int i = 0; i < dimension; i++) {
       angle = i * delta;
-      _drawLineWithArrowHead(xc, yc, xc + axisLength * Math.cos(angle), yc + axisLength * Math.sin(angle), 1, "black", i);
+      _vertices.add(_drawLineWithArrowHead(xc, yc, xc + axisLength * Math.cos(angle), yc + axisLength * Math.sin(angle), 1, "black", i));
     }
 
     context.translate(xc, yc);
@@ -100,8 +102,25 @@ class PolarPlot {
     }
     context.translate(-xc, -yc);
 
+    _drawVertices();
     _drawTitle();
+    
+    context.restore();
 
+  }
+  
+  void _drawVertices() {
+    context.beginPath();
+    context.moveTo(_vertices[0].x, _vertices[0].y);
+    for(int i = 1; i < _vertices.length; i++) {
+        context.lineTo(_vertices[i].x, _vertices[i].y);
+    }
+    context.lineTo(_vertices[0].x, _vertices[0].y);
+    context.fillStyle = "rgba(208, 248, 208, 0.5)";
+    context.fill();
+    context.setLineDash([5]);
+    context.stroke();
+    context.closePath();
   }
   
   void _drawTitle() {
@@ -129,7 +148,7 @@ class PolarPlot {
            ..closePath();
   }
 
-  void _drawLineWithArrowHead(num x1, num y1, num x2, num y2, int weight, String color, int index) {
+  Point _drawLineWithArrowHead(num x1, num y1, num x2, num y2, int weight, String color, int index) {
 
     _drawLine(x1, y1, x2, y2, weight, color);
     num dx = x2 - x1;
@@ -146,10 +165,13 @@ class PolarPlot {
     
     int n = _actionMap.values.elementAt(index);
     double p = 2 * _symbolSize + 1;
+    double q;
     for(int i = 0; i < n; i++) {
-      double q = _innerCircleRadius + (i + 1) * p;
+      q = _innerCircleRadius + (i + 1) * p;
       _drawCircle(x1 + q * arrowx, y1 + q * arrowy, _symbolSize, 1, "black");
     }
+    
+    return new Point(x1 + q * arrowx, y1 + q * arrowy);
     
   }
 
